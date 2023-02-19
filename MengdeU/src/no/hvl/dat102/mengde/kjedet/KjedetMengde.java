@@ -171,15 +171,13 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	}//
 
 	@Override
-	public MengdeADT<T> snitt(MengdeADT<T> m2) {
+	public MengdeADT<T> snitt(MengdeADT<T> m2) { //Hva ønsker de på denne?
 		// TODO
 		MengdeADT<T> snittM = new KjedetMengde<T>();
 		T element;
-		/*
-		 * Fyll ut senere
-		 * 
-		 * if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
-		 */
+		
+		if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
+
 		return snittM;
 	}
 
