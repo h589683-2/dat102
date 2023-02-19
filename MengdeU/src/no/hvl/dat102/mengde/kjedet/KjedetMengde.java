@@ -4,6 +4,7 @@ package no.hvl.dat102.mengde.kjedet;
 // Kjedet implementasjon av en mengde. 
 //********************************************************************
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Random;
 
 import no.hvl.dat102.exception.EmptyCollectionException;
@@ -68,7 +69,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	}//
 
 	@Override
-	public T fjern(T element) { //Denne skal vi se på litt senere
+	public T fjern(T element) { //Denne skal vi se pï¿½ litt senere
 
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
@@ -80,7 +81,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 			resultat = start.getElement();
 			start = start.getNeste();
 			antall--;
-		} else {// Gjennomgår den kjedete strukturen
+		} else {// Gjennomgï¿½r den kjedete strukturen
 			forgjenger = start;
 			aktuell = start.getNeste();
 			for (int sok = 2; sok <= antall && !funnet; sok++) {
@@ -115,42 +116,26 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		return funnet;
 	}
 	/*
-	 * Når vi overkjører (override) equals- meteoden er det anbefalt at vi også
-	 * overkjører hashcode-metoden da en del biblioteker bruker hascode sammen med
+	 * Nï¿½r vi overkjï¿½rer (override) equals- meteoden er det anbefalt at vi ogsï¿½
+	 * overkjï¿½rer hashcode-metoden da en del biblioteker bruker hascode sammen med
 	 * equals. Vi kommer tilbake til forklaring og bruk av hashcode senere i faget.
 	 */
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + antall;
-		result = prime * result + ((start == null) ? 0 : start.hashCode());
-		return result;
+		return Objects.hash(antall, start);
 	}
 
 	@Override
-	public boolean equals(Object ny) {
-
-		if (this == ny) {
+	public boolean equals(Object obj) {
+		if (this == obj)
 			return true;
-		}
-		if (ny == null) {
+		if (obj == null)
 			return false;
-		}
-		if (getClass() != ny.getClass()) {
+		if (getClass() != obj.getClass())
 			return false;
-		}
-		boolean likeMengder = true;
-		MengdeADT<T> m2 = (KjedetMengde<T>) ny;
-		if (this.antall != m2.antall()) {
-			likeMengder = false;
-		} else {
-			Iterator<T> teller = m2.iterator();
-
-			//Fyll ut
-		}
-		return true;// Midlertidig
+		KjedetMengde other = (KjedetMengde) obj;
+		return antall == other.antall && Objects.equals(start, other.start);
 	}
 
 	@Override
@@ -165,18 +150,24 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 
 	@Override
-	public MengdeADT<T> union (MengdeADT<T> m2) { // Denne ersattes med en mer effektiv union, se kladdeoppgavenr3
+	public MengdeADT<T> union (MengdeADT<T> m2) { //Fulgt go gjort likt som i lÃ¸sningen til kladdoppgave3 
 		KjedetMengde<T> begge = new KjedetMengde<T>();
 	    LinearNode<T> aktuell = start;
+	   
 	    while (aktuell != null) {    
-	          begge.leggTil (aktuell.getElement());
+	          begge.settInn(aktuell.getElement());
 	          aktuell = aktuell.getNeste();   //this-mengden
 	    }//while
+	   
 	    Iterator<T> teller = m2.iterator();
 	    while (teller.hasNext()){
-	           begge.leggTil (teller.next());
+	          T element = teller.next();
+	         
+	          if(!inneholder(element)) {
+	        	  begge.settInn(element);
+	          }
 	     }   
-	    return begge;
+	    return begge; 
 	}//
 
 	@Override

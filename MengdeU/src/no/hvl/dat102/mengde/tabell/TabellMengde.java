@@ -2,6 +2,7 @@ package no.hvl.dat102.mengde.tabell;
 
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.Objects;
 import java.util.Random;
 
 import no.hvl.dat102.exception.EmptyCollectionException;
@@ -78,7 +79,7 @@ public class TabellMengde<T> implements MengdeADT<T> {
 	@Override
 	public T fjern(T element) {
 
-		// Søker etter og fjerner element. Returnerer null-ref ved ikke-funn
+		// Sï¿½ker etter og fjerner element. Returnerer null-ref ved ikke-funn
 
 		if (erTom())
 			throw new EmptyCollectionException("mengde");
@@ -109,29 +110,25 @@ public class TabellMengde<T> implements MengdeADT<T> {
 		return (funnet);
 	}
 
-	/*
-	 * Når vi overkjører (override) equals- meteoden er det anbefalt at vi også
-	 * overkjører hashcode-metoden da en del biblioterker brker hashcode sammen med
-	 * equals. Vi kommer tilbake til forklaring og bruk av hashcode senere i faget.
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + antall;
 		result = prime * result + Arrays.deepHashCode(tab);
+		result = prime * result + Objects.hash(antall);
 		return result;
 	}
 
 	@Override
-	public boolean equals(Object m2) {
-		boolean likeMengder = true;
-		T element;
-
-		/*
-		 * ...Fyll ut
-		 */
-		return likeMengder;
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		TabellMengde other = (TabellMengde) obj;
+		return antall == other.antall && Arrays.deepEquals(tab, other.tab);
 	}
 
 	@Override
