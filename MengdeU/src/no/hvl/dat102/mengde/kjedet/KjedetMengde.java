@@ -206,7 +206,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 			while(it.hasNext()) {
 				T element = it.next();
 				if(differensM.inneholder(element) == false) {
-					
+					differensM.leggTil(element);
 				}
 			}
 			
