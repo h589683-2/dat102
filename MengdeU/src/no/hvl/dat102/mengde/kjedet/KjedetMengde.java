@@ -178,7 +178,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		
 		for(int i = 0; i < antall; i++) {
 			
-		}
+		}dfdfd
 		
 		
 		if (this.inneholder(element)) {
