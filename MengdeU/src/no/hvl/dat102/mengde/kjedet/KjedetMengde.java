@@ -176,7 +176,15 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 		MengdeADT<T> snittM = new KjedetMengde<T>();
 		T element;
 		
-		if (this.inneholder(element)) ((KjedetMengde<T>) snittM).settInn(element);
+		for(int i = 0; i < antall; i++) {
+			
+		}
+		
+		
+		if (this.inneholder(element)) {
+			((KjedetMengde<T>) snittM).settInn(element);
+		}
+			
 
 		return snittM;
 	}
