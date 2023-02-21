@@ -168,7 +168,7 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	          }
 	     }   
 	    return begge; 
-	}//
+	}//ff
 
 	@Override
 	public MengdeADT<T> snitt(MengdeADT<T> m2) { //Hva ønsker de på denne?
