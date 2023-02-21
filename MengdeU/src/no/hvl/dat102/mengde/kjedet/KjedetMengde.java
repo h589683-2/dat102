@@ -174,11 +174,11 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	public MengdeADT<T> snitt(MengdeADT<T> m2) { //Hva ønsker de på denne?
 		// TODO
 		MengdeADT<T> snittM = new KjedetMengde<T>();
-		T element;
+		T element = (T) m2;
 		
-		for(int i = 0; i < antall; i++) {
+		for(int i = 0; i <= antall; i++) {
 			
-		}dfdfd
+		}
 		
 		
 		if (this.inneholder(element)) {

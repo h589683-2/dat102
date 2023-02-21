@@ -17,5 +17,4 @@ public class EmptyCollectionException extends RuntimeException{
    public EmptyCollectionException (String samling){
       super (" Denne " + samling + " er tom.");
    }
-   //BØ
 }
