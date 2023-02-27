@@ -46,7 +46,7 @@ public abstract class MengdeADTTest {
 		MengdeADT<Integer> uni = m2.union(m1);
 		boolean test = uni.inneholder(t3) && uni.inneholder(t0) && uni.inneholder(t4);
 		
-		assertEquals(true, false);
+		assertTrue(test);
 	}
 	
 	@Test
