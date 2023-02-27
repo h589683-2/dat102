@@ -1,10 +1,10 @@
-package kjedetTest;
+package tabellTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class KjedetT {
+class MengdeKjedetTest {
 
 	@Test
 	void test() {
