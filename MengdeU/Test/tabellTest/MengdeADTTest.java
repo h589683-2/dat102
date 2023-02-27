@@ -64,10 +64,31 @@ public abstract class MengdeADTTest {
 	}
 	
 	@Test
-	public void testDifferens() {}
+	public void testDifferens() {
+		m1.leggTil(t3);
+		m1.leggTil(t4);
+		m2.leggTil(t0);
+		m2.leggTil(t3);
+		
+		MengdeADT<Integer> diff = m2.differens(m1);
+		boolean test = !diff.inneholder(t3) && diff.inneholder(t4) && diff.inneholder(t0);
+		
+		assertTrue(test);
+		
+	}
 
 	@Test
-	public void testUndermengde() {}
+	public void testUndermengde() {
+		m1.leggTil(t3);
+		m1.leggTil(t2);
+		m2.leggTil(t0);
+		m2.leggTil(t3);
+		m2.leggTil(t5);
+		m2.leggTil(t2);
+		
+		
+		assertTrue(m2.undermengde(m1));
+	}
 	
 	
 }
