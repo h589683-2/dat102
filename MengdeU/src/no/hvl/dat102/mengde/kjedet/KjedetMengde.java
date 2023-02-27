@@ -168,11 +168,11 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 	          }
 	     }   
 	    return begge; 
-	}//ff
+	}
 
 	@Override
-	public MengdeADT<T> snitt(MengdeADT<T> m2) { //Hva ønsker de på denne?
-		// TODO
+	public MengdeADT<T> snitt(MengdeADT<T> m2) { 
+
 		MengdeADT<T> snittM = new KjedetMengde<T>();
 		LinearNode<T> aktuell = start;
 		

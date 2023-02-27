@@ -50,7 +50,18 @@ public abstract class MengdeADTTest {
 	}
 	
 	@Test
-	public void testSnitt() {}
+	public void testSnitt() {
+		m1.leggTil(t3);
+		m1.leggTil(t4);
+		m2.leggTil(t0);
+		m2.leggTil(t3);
+		
+		MengdeADT<Integer> snitt = m2.snitt(m1);
+		boolean test = snitt.inneholder(t3) && !snitt.inneholder(t4) && !snitt.inneholder(t0);
+		
+		assertTrue(test);
+		
+	}
 	
 	@Test
 	public void testDifferens() {}
