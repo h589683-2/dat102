@@ -1,17 +1,42 @@
 package hobbyProsjekt;
 
 import no.hvl.dat102.mengde.adt.MengdeADT;
+import hobbyProsjekt.Hobby;
 
 public class Medlem {
 		private String navn; 
 		private MengdeADT<Hobby> hobbyer; 
 		private int statusIndeks;
 		
-		public Medlem(Stirng navn, MengdeADT<Hobby> hobbyer, int statusIndeks) {
+		public Medlem(String navn, MengdeADT<Hobby> hobbyer, int statusIndeks) {
 			this.navn = navn;
 			this.hobbyer = hobbyer;
 			this.statusIndeks = statusIndeks;
 		}
+		
+		private void setNavn(String navn) {
+			this.navn = navn;
+		}
+		private String getNavn() {
+			return navn;
+		}
+		private void setHobbyer(MengdeADT<Hobby> hobbyer) {
+			this.hobbyer = hobbyer;
+		}
+		private MengdeADT<Hobby> getHobbyer(){
+			return hobbyer;
+		}
+		private void setStatusIndeks(int statusIndeks) {
+			this.statusIndeks = statusIndeks;
+		}
+		private int getStatusIndeks(){
+		return statusIndeks;
+		}
 
+		public String toString() {
+			String s = "";
+			s = getNavn() + getHobbyer().toString() + Integer.toString(getStatusIndeks());
+			return s;
+		}
 //… Andre metoder
 }
