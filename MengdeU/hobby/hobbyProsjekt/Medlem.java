@@ -38,5 +38,13 @@ public class Medlem {
 			s = getNavn() + getHobbyer().toString() + Integer.toString(getStatusIndeks());
 			return s;
 		}
-//… Andre metoder
+		
+		public boolean passerTil(Medlem m1, Medlem m2) {
+			if(m1.getHobbyer() == m2.getHobbyer()) {
+				return true;
+			}
+			return false;
+		}
+		
+
 }
