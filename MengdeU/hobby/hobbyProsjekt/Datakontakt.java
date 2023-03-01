@@ -2,7 +2,7 @@ package hobbyProsjekt;
 
 public class Datakontakt {
 	
-	private Medlem [] medlemTab;
+	private static Medlem [] medlemTab;
 	private int antall;
 	
 	public Datakontakt(int lengde) {
@@ -21,24 +21,56 @@ public class Datakontakt {
 	}
 	
 	public void leggTilMedlem(Medlem person){
+		if(medlemTab.length > antall) {
+			medlemTab[antall] = person;
+			antall++;
+		} else {
+			utvid();
+			medlemTab[antall] = person;
+			antall++;
+		}
 		
-		medlemTab[antall] = person;
-		antall++;
-		System.out.println(antall);
+		
 	}
 	
 	public int finnMedlemIndeks(String navn) {
+		for(int i = 0; i < medlemTab.length; i++) {
+			if(navn == medlemTab[i].getNavn()) {
+				return i;
+			}
+		}
 		
-		return antall;
+		return -1;
 		
-	}
-	
-	public void finnPartnerFor(String navn) {
-		
-	}
-	
-	public void tilbakestillStatusIndeks() {
 		
 	}
 	
+	public int finnPartnerFor(String navn) {
+		int indeks = finnMedlemIndeks(navn);
+		for(int i = 0; i < medlemTab.length; i++) {
+			if((Medlem.passerTil(medlemTab[i], medlemTab[indeks])) && (medlemTab[i].getStatusIndeks() == -1) && (i != indeks)) {
+				medlemTab[i].setStatusIndeks(indeks);
+				System.out.print("indeks for i satt: " + indeks);
+				medlemTab[indeks].setStatusIndeks(i);
+				System.out.print("i for indeks satt: " + i);
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public void tilbakestillStatusIndeks(String navn) {
+		int indeks = finnMedlemIndeks(navn);
+		
+		if(indeks > -1) {
+			medlemTab[indeks].setStatusIndeks(-1);
+		}
+	
+	}
+	
+	public void sokPartner() {
+		for(int i = 0; i < medlemTab.length; i++) {
+			finnPartnerFor(medlemTab[i].getNavn());
+		}
+	}
 }

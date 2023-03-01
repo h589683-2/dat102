@@ -12,6 +12,7 @@ public class KlientMedlem {
 		dk.leggTilMedlem(Tekstgrensesnitt.lesMedlem());
 		i++;
 		}
+		dk.sokPartner();
 		
 		Tekstgrensesnitt.skrivMedlemsdata(dk);
 		

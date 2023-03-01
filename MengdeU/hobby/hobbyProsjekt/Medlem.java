@@ -13,7 +13,7 @@ public class Medlem {
 			this.hobbyer = hobbyer;
 			this.statusIndeks = -1;
 		}
-		
+     		
 		private void setNavn(String navn) {
 			this.navn = navn;
 		}
@@ -40,7 +40,7 @@ public class Medlem {
 			return s;
 		}
 		
-		public boolean passerTil(Medlem m1, Medlem m2) {
+		public static boolean passerTil(Medlem m1, Medlem m2) {
 			if(m1.getHobbyer() == m2.getHobbyer()) {
 				return true;
 			}
