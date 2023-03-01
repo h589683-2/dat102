@@ -8,10 +8,10 @@ public class Medlem {
 		private MengdeADT<Hobby> hobbyer; 
 		private int statusIndeks;
 		
-		public Medlem(String navn, MengdeADT<Hobby> hobbyer, int statusIndeks) {
+		public Medlem(String navn, MengdeADT<Hobby> hobbyer) {
 			this.navn = navn;
 			this.hobbyer = hobbyer;
-			this.statusIndeks = statusIndeks;
+			statusIndeks = -1;
 		}
 		
 		private void setNavn(String navn) {
@@ -23,7 +23,7 @@ public class Medlem {
 		private void setHobbyer(MengdeADT<Hobby> hobbyer) {
 			this.hobbyer = hobbyer;
 		}
-		private MengdeADT<Hobby> getHobbyer(){
+		public MengdeADT<Hobby> getHobbyer(){
 			return hobbyer;
 		}
 		private void setStatusIndeks(int statusIndeks) {

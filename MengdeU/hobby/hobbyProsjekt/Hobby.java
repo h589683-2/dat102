@@ -19,10 +19,7 @@ package hobbyProsjekt;
 			return s;
 		}
 
-		public boolean equals(Object hobby2){
-			// eventuelt fylle ut først med "standard" kode
-			// som vi ofte har med overkjøring av
-			// equals-metoden generert av Eclipse
+		public boolean equals(Object hobby2){ //FIKS
 			Hobby hobbyDenAndre = (Hobby)hobby2;
 			return(hobbyNavn.equals(hobbyDenAndre.getHobbyNavn()));
 		}

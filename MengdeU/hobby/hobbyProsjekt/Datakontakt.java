@@ -3,15 +3,27 @@ package hobbyProsjekt;
 public class Datakontakt {
 	
 	private Medlem [] medlemTab;
-	private int antallMedlemer;
+	private int antall;
+	
+	public Datakontakt(int lengde) {
+		medlemTab = new Medlem[lengde];
+		antall = 0;
+	}
+	
+	public void utvid(){
+		Medlem[] ny = new Medlem[antall*2];
+		ny = medlemTab;
+		medlemTab = ny;
+	}
 	
 	public void leggTilMedlem(Medlem person){
-		
+		medlemTab[antall] = person;
+		antall++;
 	}
 	
 	public int finnMedlemIndeks(String navn) {
 		
-		return antallMedlemer;
+		return antall;
 		
 	}
 	
