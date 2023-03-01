@@ -1,14 +1,23 @@
 package hobbyProsjekt;
 
 import hobbyProsjekt.Tekstgrensesnitt;
+import hobbyProsjekt.Datakontakt;
 
 public class KlientMedlem {
 
 	public static void main(String [] args) {
-		Tekstgrensesnitt.lesMedlem();
-	
+		Datakontakt dk = new Datakontakt(3);
+		int i = 0;
+		while(i < 3) {
+		dk.leggTilMedlem(Tekstgrensesnitt.lesMedlem());
+		i++;
+		}
+		
+		Tekstgrensesnitt.skrivMedlemsdata(dk);
+		
 		
 		
 	}
+
 	
 }

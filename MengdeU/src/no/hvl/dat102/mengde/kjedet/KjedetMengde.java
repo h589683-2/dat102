@@ -30,6 +30,11 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 			node.setNeste(start);
 			start = node;
 			antall++;
+		} else if(start == null) {
+			LinearNode<T> node = new LinearNode<T>(element);
+			node.setNeste(start);
+			start = node;
+			antall++;
 		}
 	}
 
@@ -190,7 +195,6 @@ public class KjedetMengde<T> implements MengdeADT<T> {
 
 	@Override
 	public MengdeADT<T> differens(MengdeADT<T> m2) {
-		// TODO
 		MengdeADT<T> differensM = new KjedetMengde<T>();
 		LinearNode<T> aktuell = start;
 		MengdeADT<T> snitt = snitt(m2);

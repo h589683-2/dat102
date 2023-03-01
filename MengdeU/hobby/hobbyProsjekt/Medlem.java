@@ -11,25 +11,26 @@ public class Medlem {
 		public Medlem(String navn, MengdeADT<Hobby> hobbyer) {
 			this.navn = navn;
 			this.hobbyer = hobbyer;
-			statusIndeks = -1;
+			this.statusIndeks = -1;
 		}
 		
 		private void setNavn(String navn) {
 			this.navn = navn;
 		}
-		private String getNavn() {
+		public String getNavn() {
 			return navn;
 		}
 		private void setHobbyer(MengdeADT<Hobby> hobbyer) {
 			this.hobbyer = hobbyer;
 		}
+		
 		public MengdeADT<Hobby> getHobbyer(){
 			return hobbyer;
 		}
-		private void setStatusIndeks(int statusIndeks) {
+		public void setStatusIndeks(int statusIndeks) {
 			this.statusIndeks = statusIndeks;
 		}
-		private int getStatusIndeks(){
+		public int getStatusIndeks(){
 		return statusIndeks;
 		}
 

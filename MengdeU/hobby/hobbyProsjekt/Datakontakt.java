@@ -10,6 +10,10 @@ public class Datakontakt {
 		antall = 0;
 	}
 	
+	public Medlem[] getTab() {
+		return medlemTab;
+	}
+	
 	public void utvid(){
 		Medlem[] ny = new Medlem[antall*2];
 		ny = medlemTab;
@@ -17,8 +21,10 @@ public class Datakontakt {
 	}
 	
 	public void leggTilMedlem(Medlem person){
+		
 		medlemTab[antall] = person;
 		antall++;
+		System.out.println(antall);
 	}
 	
 	public int finnMedlemIndeks(String navn) {
