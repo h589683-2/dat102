@@ -48,12 +48,12 @@ public class Datakontakt {
 	public int finnPartnerFor(String navn) {
 		int indeks = finnMedlemIndeks(navn);
 		
-		
-		
 		for(int i = 0; i < medlemTab.length; i++) {
 			if((i != indeks) && (medlemTab[i].getStatusIndeks() == -1)) {
+				if(medlemTab[i].getHobbyer().equals(medlemTab[indeks].getHobbyer())) {
 					medlemTab[i].setStatusIndeks(indeks);
 					return i;
+				}
 				}	
 		}
 		return -1;

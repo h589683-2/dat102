@@ -47,6 +47,14 @@ public class Tekstgrensesnitt{
 	}
 	
 	public static void skrivParListe (Datakontakt arkiv){
-	
+		Medlem[] m = arkiv.getTab(); 
+		
+		for(int i = 0; i < m.length; i++) {
+			if((m[i].getStatusIndeks() > i)) {
+				int status = m[i].getStatusIndeks();
+				System.out.println("Par = " + m[status].getNavn() + " og " + m[i].getNavn());
+			}
+		}
+		
 	}
 }

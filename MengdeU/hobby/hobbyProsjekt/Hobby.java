@@ -19,7 +19,7 @@ package hobbyProsjekt;
 			return s;
 		}
 
-		public boolean equals(Object hobby2){ //FIKS
+		public boolean equals(Object hobby2){
 			Hobby hobbyDenAndre = (Hobby)hobby2;
 			return(hobbyNavn.equals(hobbyDenAndre.getHobbyNavn()));
 		}
