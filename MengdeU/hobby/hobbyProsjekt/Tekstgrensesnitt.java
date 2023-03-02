@@ -14,10 +14,15 @@ public class Tekstgrensesnitt{
 		System.out.println("Navn: ");
 		String navn = s.nextLine();
 		System.out.println("Hobbyer");
-		String hobby = s.nextLine();
-		Hobby h = new Hobby(hobby);
+		
+		String hobby = null;
 		KjedetMengde <Hobby> mh = new KjedetMengde<Hobby>();
-		mh.leggTil(h);
+		do {
+			 hobby = s.nextLine();
+			Hobby h = new Hobby(hobby);
+			 mh.leggTil(h);
+		} while(hobby != "");
+			
 		Medlem m = new Medlem(navn, mh);
 		return m;
 		
@@ -27,8 +32,8 @@ public class Tekstgrensesnitt{
 		Medlem[] m = dk.getTab();
 		for(int i = 0; i < m.length; i++) {
 			if(m[i] != null) {
-			System.out.println("Status: " + m[i].getStatusIndeks() + "\nNavn: " + m[i].getNavn() + "\nHobbyer: " + m[i].getHobbyer()
-					+ "\n--------------------------------------------");
+			System.out.println("Status: " + m[i].getStatusIndeks() + "\nNavn: " + m[i].getNavn() + "\nHobbyer: <" + m[i].getHobbyer().toString()
+					+ ">" + "\n--------------------------------------------");
 			} else {
 				break;
 			}

@@ -1,7 +1,5 @@
 package hobbyProsjekt;
 
-import hobbyProsjekt.Tekstgrensesnitt;
-import hobbyProsjekt.Datakontakt;
 
 public class KlientMedlem {
 

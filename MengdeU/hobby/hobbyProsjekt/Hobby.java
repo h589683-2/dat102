@@ -15,7 +15,7 @@ package hobbyProsjekt;
 		}
 
 		public String toString(){
-			String s = "<" + getHobbyNavn() + ">";
+			String s = getHobbyNavn();
 			return s;
 		}
 

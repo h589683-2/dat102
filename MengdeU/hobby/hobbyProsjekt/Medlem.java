@@ -36,12 +36,13 @@ public class Medlem {
 
 		public String toString() {
 			String s = "";
-			s = getNavn() + getHobbyer().toString() + Integer.toString(getStatusIndeks());
+			s = getNavn() + "<" + getHobbyer().toString() + ">" + Integer.toString(getStatusIndeks());
 			return s;
 		}
 		
 		public static boolean passerTil(Medlem m1, Medlem m2) {
 			if(m1.getHobbyer() == m2.getHobbyer()) {
+				System.out.println("passer");
 				return true;
 			}
 			return false;
