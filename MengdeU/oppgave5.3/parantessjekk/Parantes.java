@@ -25,23 +25,90 @@ public class Parantes implements Parentessjekker {
 		return b;
 	}
 
-	
+	//Done
 	@Override
 	public boolean erHogreparentes(char p) {
-		// TODO Auto-generated method stub
-		return false;
+		Character C = p;
+		boolean b = false;
+	
+		switch(C){
+			case ')':
+				b = true;
+				break;
+			case '}':
+				b = true;
+				break;
+			case ']':
+				b = true;
+				break;
+			default:
+				b = false;
+				break;
+		}			
+		return b;
 	}
 
+	//Done
 	@Override
 	public boolean erParentes(char p) {
-		// TODO Auto-generated method stub
-		return false;
+		Character C = p;
+		boolean b = false;
+	
+		switch(C){
+			case ')':
+				b = true;
+				break;
+			case '}':
+				b = true;
+				break;
+			case ']':
+				b = true;
+				break;
+			case '(':
+				b = true;
+				break;
+			case '{':
+				b = true;
+				break;
+			case '[':
+				b = true;
+				break;
+			default:
+				b = false;
+				break;
+		}			
+		return b;
 	}
 
+	//Done
 	@Override
 	public boolean erPar(char venstre, char hogre) {
-		// TODO Auto-generated method stub
+		Character V = venstre;
+		Character H = hogre;
+		Character Match = '0';
+		
+		switch(V) {
+		case '(':
+			Match = ')';
+			break;
+		case '{':
+			Match = '}';
+			break;
+		case '[':
+			Match = '}';
+			break;
+		default:
+			break;
+		}
+		
+		if(H.equals(Match)) {
+			return true;
+		}
+		
 		return false;
+		
+		
+		
 	}
 
 	@Override
@@ -49,6 +116,4 @@ public class Parantes implements Parentessjekker {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	
 }
