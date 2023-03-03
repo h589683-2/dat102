@@ -2,8 +2,8 @@ package oppg4;
 
 public class c {
 	public static void main(String [] args) {
-		int n = 50;
-		print(o1(n));
+		int n = 13;
+		print(o1(n+1));
 		
 	}
 	
