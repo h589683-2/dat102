@@ -1,8 +1,8 @@
 package oppg4;
 
-public class b {
+public class c {
 	public static void main(String [] args) {
-		int n = 10;
+		int n = 50;
 		print(o1(n));
 		
 	}
@@ -16,8 +16,8 @@ public class b {
 	
 	public static int[] o1(int n) {
 		int [] res = new int[n];
-		res[0] = 2;
-		res[1] = 5;
+		res[0] = 0;
+		res[1] = 1;
 		
 		
 		for(int i = 2; i < res.length; i++) {
@@ -30,7 +30,7 @@ public class b {
 	public static int o2(int a1, int a2) {
 		int res = 0;
 		
-		res = 5 * a2 - 6 * a1 + 2;
+		res = a2 + a1;
 		return res;
 	}
 	
