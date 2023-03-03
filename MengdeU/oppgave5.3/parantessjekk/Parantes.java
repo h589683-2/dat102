@@ -113,7 +113,7 @@ public class Parantes implements Parentessjekker {
 
 	@Override
 	public boolean erBalansert(String s) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 }
