@@ -1,6 +1,7 @@
 package parantessjekk;
 
 public interface Parentessjekker {
+	
 /**
 * Metoden sjekker om et tegn er '(', '[' eller '{'.
 *
@@ -8,6 +9,7 @@ public interface Parentessjekker {
 * @return true dersom tegnet er en venstrepareentes, false elles
 */
 boolean erVenstreparentes(char p);
+
 /**
 * Metoden sjekker om et tegn er ')', ']' eller '}'.
 *
@@ -15,6 +17,7 @@ boolean erVenstreparentes(char p);
 * @return true dersom tegnet er en hogreparentes, false elles
 */
 boolean erHogreparentes(char p);
+
 /**
 * Metoden sjekkker om et tegn er en parentes.
 *
@@ -22,6 +25,7 @@ boolean erHogreparentes(char p);
 * @return true dersom tegnet er (', '[', '{', ')', ']' eller '}', false ellers.
 */
 boolean erParentes(char p);
+
 /**
 * Metoden sjekker om to tegn er et parentespar.
 *
@@ -31,6 +35,7 @@ boolean erParentes(char p);
 * @return true dersom de matcher, dvs. venstre er en venstreparentes og * hogre er tilhørende høgreparentes
 */
 boolean erPar(char venstre, char hogre);
+
 /**
 * Metoden sjekker om en streng som inneholder parenteser er balansert. * Den ser bort fra tegn som ikke er parenteser.
 *
